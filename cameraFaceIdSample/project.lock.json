@@ -22820,10 +22820,10 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "C:\\Users\\slipk\\Documents\\cameraFaceIdSample\\cameraFaceIdSample\\cameraFaceIdSample.csproj",
+      "projectUniqueName": "C:\\Users\\slipk\\Documents\\GitHub\\CameraFaceIdRecognition\\cameraFaceIdSample\\cameraFaceIdSample.csproj",
       "projectName": "cameraFaceIdSample",
-      "projectPath": "C:\\Users\\slipk\\Documents\\cameraFaceIdSample\\cameraFaceIdSample\\cameraFaceIdSample.csproj",
-      "projectJsonPath": "C:\\Users\\slipk\\Documents\\cameraFaceIdSample\\cameraFaceIdSample\\project.json",
+      "projectPath": "C:\\Users\\slipk\\Documents\\GitHub\\CameraFaceIdRecognition\\cameraFaceIdSample\\cameraFaceIdSample.csproj",
+      "projectJsonPath": "C:\\Users\\slipk\\Documents\\GitHub\\CameraFaceIdRecognition\\cameraFaceIdSample\\project.json",
       "projectStyle": "ProjectJson"
     },
     "dependencies": {

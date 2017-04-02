@@ -6,7 +6,6 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
     <Grid
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <VisualStateManager.VisualStateGroups>
@@ -72,26 +71,26 @@
       Grid.ColumnSpan="3"
       Grid.RowSpan="3" />
         <Viewbox
-      Grid.Row="1"
-      Grid.Column="1">
+      Grid.Column="2" Margin="261,309,-38,102">
             <StackPanel
         Orientation="Horizontal"
         Grid.Column="1"
         Grid.Row="1">
-                <Button x:ConnectionId='13'
+                <Button x:ConnectionId='19'
           x:Name="btnPlay"
+          Visibility="Collapsed"
                          >
                     <SymbolIcon
             Symbol="Play" />
                 </Button>
-                <Button x:ConnectionId='14'
+                <Button x:ConnectionId='20'
           x:Name="btnStop"
                         
           Visibility="Collapsed">
                     <SymbolIcon
             Symbol="Stop" />
                 </Button>
-                <Button x:ConnectionId='15'
+                <Button x:ConnectionId='21'
           x:Name="btnOxford"
                                        
           Visibility="Collapsed">
@@ -113,20 +112,31 @@
         Height="50"
         Foreground="White"
         IsActive="True" />
+            <!--Jorge-->
         </Grid>
         <StackPanel x:ConnectionId='9'
       x:Name="stackpanel"
-      Grid.RowSpan="3"
-      Grid.ColumnSpan="3"
+      Grid.ColumnSpan="2"
       HorizontalAlignment="Stretch"
       Background="Black"
-      VerticalAlignment="Bottom">
-           
-            <ListView x:ConnectionId='10' Height="45" Name="li_nom"/>
-            <ListView x:ConnectionId='11' Height="45" Name="li_age"/>
-            <ListView x:ConnectionId='12' Height="45" Name="li_desc"/>
-            
+      Opacity="0.5"
+      VerticalAlignment="Bottom" Height="206" Grid.RowSpan="2" Margin="18,0,375,0" Grid.Row="1">
+            <ListView x:ConnectionId='14' Height="40" Name="li_nom"/>
+            <ListView x:ConnectionId='15' Height="40" Name="li_age"/>
+            <ListView x:ConnectionId='16' Height="40" Name="li_desc"/>
+            <TextBox x:ConnectionId='17' Name="tbLatitude" TextWrapping="Wrap" Text="" IsEnabled="False" Opacity=".4"/>
+            <TextBox x:ConnectionId='18' Name="tbLongitude" TextWrapping="Wrap" Text="" IsEnabled="False" Opacity=".4"/>
         </StackPanel>
+        <StackPanel x:ConnectionId='10'
+      x:Name="stackpanelAlert"
+      HorizontalAlignment="Stretch"
+      Background="Black"
+      Opacity="0.5"
+      VerticalAlignment="Top" Height="60" Margin="15,0,0,0">
+            <TextBlock x:ConnectionId='13' Text="" Name="txtAlert" RenderTransformOrigin="0.5,0.5" FontSize="36" Foreground="White" FontFamily="Microsoft JhengHei" FontWeight="Bold"/>
+        </StackPanel>
+        <Image x:ConnectionId='11' Name="imgOn" Source="Resources/gifOn.gif" Visibility="Collapsed" HorizontalAlignment="Left" Height="45" Margin="5,10,0,0" VerticalAlignment="Top" Width="45" RenderTransformOrigin="0.511,0.496" Grid.Column="1"/>
+        <Image x:ConnectionId='12' Name="imgOff" Source="Resources/gifOff.gif" Visibility="Collapsed" HorizontalAlignment="Left" Height="45" Margin="7,10,0,0" VerticalAlignment="Top" Width="45" Grid.Column="1"/>
     </Grid>
 </Page>
 

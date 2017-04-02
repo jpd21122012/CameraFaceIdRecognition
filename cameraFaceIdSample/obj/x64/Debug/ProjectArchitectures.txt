@@ -1,1 +1,1 @@
-C:\Users\slipk\Documents\cameraFaceIdSample\cameraFaceIdSample\cameraFaceIdSample.csproj;x64
+C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\cameraFaceIdSample.csproj;x64

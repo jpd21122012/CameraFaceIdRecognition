@@ -11,33 +11,24 @@ using Windows.Storage.Streams;
 using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-//using cameraFaceIdSample.Classes;
 using Microsoft.WindowsAzure.MobileServices;
 using System.Collections.Generic;
-
-// La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0xc0a
+using Windows.UI.Xaml.Media;
+using Windows.Devices.Geolocation;
+using Windows.UI.Core;
 
 namespace cameraFaceIdSample
 {
-    /// <summary>
-    /// Página vacía que se puede usar de forma independiente o a la que se puede navegar dentro de un objeto Frame.
-    /// </summary>
-
     public sealed partial class MainPage : Page
     {
-
-        public Recognition rec = new Recognition();
-        public static string x;
-        public static Guid guid;
-
+        private Geolocator _geolocator = null;
+        IMobileServiceTable<UsersUPT> userTableObj = App.MobileService.GetTable<UsersUPT>();
         public MainPage()
         {
             this.InitializeComponent();
-
+            OnStart();
+            //btnStop.Visibility = Visibility.Collapsed;
         }
-
-        IMobileServiceTable<UsersUPT> userTableObj = App.MobileService.GetTable<UsersUPT>();
-
 
         private async void Query(string idBuscar)
         {
@@ -48,22 +39,17 @@ namespace cameraFaceIdSample
                 lista = await userTableObj.Where(userTableObj => userTableObj.PID == idBuscar).ToListAsync();
                 li_nom.ItemsSource = lista;
                 li_nom.DisplayMemberPath = "nombre";
-
                 lista = await userTableObj.Where(userTableObj => userTableObj.PID == idBuscar).ToListAsync();
                 li_age.ItemsSource = lista;
                 li_age.DisplayMemberPath = "edad";
-
                 lista = await userTableObj.Where(userTableObj => userTableObj.PID == idBuscar).ToListAsync();
                 li_desc.ItemsSource = lista;
                 li_desc.DisplayMemberPath = "descripcion";
             }
             catch (Exception)
             {
-
-
             }
         }
-
 
         string CurrentVisualState
         {
@@ -82,43 +68,28 @@ namespace cameraFaceIdSample
         }
         async Task ChangeStateAsync()
         {
-            await Dispatcher.RunAsync(
-              Windows.UI.Core.CoreDispatcherPriority.Normal,
-              () =>
+            await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal,() =>
               {
                   VisualStateManager.GoToState(this, this.currentVisualState, false);
-              }
-            );
+              });
         }
-        async void OnStart(object sender, RoutedEventArgs args)
+        async void OnStart()
         {
-
             this.CurrentVisualState = "Playing";
-
             this.requestStopCancellationToken = new CancellationTokenSource();
-
             this.cameraPreviewManager = new CameraPreviewManager(this.captureElement);
-
             var videoProperties =
               await this.cameraPreviewManager.StartPreviewToCaptureElementAsync(
                 vcd => vcd.EnclosureLocation.Panel == Windows.Devices.Enumeration.Panel.Front);
-
-            this.faceDetectionProcessor = new FaceDetectionFrameProcessor(
+              this.faceDetectionProcessor = new FaceDetectionFrameProcessor(
               this.cameraPreviewManager.MediaCapture,
               this.cameraPreviewManager.VideoProperties);
-
-            this.drawingHandler = new FacialDrawingHandler(
+              this.drawingHandler = new FacialDrawingHandler(
               this.drawCanvas, videoProperties, Colors.White);
-
             this.faceDetectionProcessor.FrameProcessed += (s, e) =>
             {
-                // This event will fire on the task thread that the face
-                // detection processor is running on. 
                 this.drawingHandler.SetLatestFrameReceived(e.Results);
-
-                this.CurrentVisualState =
-                  e.Results.Count > 0 ? "PlayingWithFace" : "Playing";
-
+                this.CurrentVisualState =e.Results.Count > 0 ? "PlayingWithFace" : "Playing";
                 this.CopyBitmapForOxfordIfRequestPending(e.Frame.SoftwareBitmap);
             };
 
@@ -131,9 +102,7 @@ namespace cameraFaceIdSample
             {
             }
             await this.cameraPreviewManager.StopPreviewAsync();
-
             this.requestStopCancellationToken.Dispose();
-
             this.CurrentVisualState = "Stopped";
         }
         void CopyBitmapForOxfordIfRequestPending(SoftwareBitmap bitmap)
@@ -141,12 +110,7 @@ namespace cameraFaceIdSample
             if ((this.copiedVideoFrameComplete != null) &&
              (!this.copiedVideoFrameComplete.Task.IsCompleted))
             {
-                // We move to RGBA16 because that is a format that we will then be able
-                // to use a BitmapEncoder on to move it to PNG and we *cannot* do async
-                // work here because it'll break our processing loop.
-                var convertedRgba16Bitmap = SoftwareBitmap.Convert(bitmap,
-                  BitmapPixelFormat.Rgba16);
-
+                var convertedRgba16Bitmap = SoftwareBitmap.Convert(bitmap,BitmapPixelFormat.Rgba16);
                 this.copiedVideoFrameComplete.SetResult(convertedRgba16Bitmap);
             }
         }
@@ -157,44 +121,23 @@ namespace cameraFaceIdSample
 
         async void OnSubmitToOxfordAsync(object sender, RoutedEventArgs e)
         {
-            // Because I constantly change visual states in the processing loop, I'm just doing
-            // this with some code rather than with visual state changes because those would
-            // get quickly overwritten while this work is ongoing.
             this.progressIndicator.Visibility = Visibility.Visible;
-
-            // We create this task completion source which flags our main loop
-            // to create a copy of the next frame that comes through and then
-            // we pick that up here when it's done...
             this.copiedVideoFrameComplete = new TaskCompletionSource<SoftwareBitmap>();
-
             var bgra16CopiedFrame = await this.copiedVideoFrameComplete.Task;
-
             this.copiedVideoFrameComplete = null;
-
             InMemoryRandomAccessStream destStream = new InMemoryRandomAccessStream();
-
             // Now going to JPEG because Project Oxford can accept those.
-            BitmapEncoder encoder = await BitmapEncoder.CreateAsync(BitmapEncoder.JpegEncoderId,
-              destStream);
-
+            BitmapEncoder encoder = await BitmapEncoder.CreateAsync(BitmapEncoder.JpegEncoderId,destStream);
             encoder.SetSoftwareBitmap(bgra16CopiedFrame);
-
             await encoder.FlushAsync();
-
             FaceServiceClient faceService = new FaceServiceClient(OxfordApiKey);
             FaceServiceClient faceService1 = new FaceServiceClient(OxfordApiKey);
-
-            //Face[] faces = await faceService.DetectAsync(destStream.AsStream(), true, true, true, true);
-            //Face[] faces = await faceService.DetectAsync(destStream.AsStream(), true, true, true, true);
             var requiredFaceAttributes = new FaceAttributeType[] {
             FaceAttributeType.Age, FaceAttributeType.Gender};
             Face[] faces = await faceService.DetectAsync(destStream.AsStream(), returnFaceLandmarks: true, returnFaceAttributes: requiredFaceAttributes);
-            
+
             if (faces != null)
             {
-                var edad = faces[0].FaceAttributes.Age;
-                var genero = faces[0].FaceAttributes.Gender;
-                int roundedAge = (int)Math.Round(edad);
                 Debug.WriteLine("ID de rostro: " + faces[0].FaceId);
                 Guid idGuid = Guid.Parse(faces[0].FaceId.ToString());
                 SimilarPersistedFace[] facescomp = await faceService1.FindSimilarAsync(idGuid, "21122012", 1);
@@ -207,17 +150,40 @@ namespace cameraFaceIdSample
                     Debug.WriteLine("Usuario encontrado");
                     // busqueda en la base de datos
                     Debug.WriteLine("Entrando a metodo bd.visualizar info de sujeto \n");
+                    stackpanelAlert.Opacity = 0.5;
+                    stackpanelAlert.Background = new SolidColorBrush(Colors.Red);
+                    txtAlert.Text = "!Alerta¡ Sujeto buscado";
                     Query(facescomp[0].PersistedFaceId.ToString());
-
+                    imgOff.Visibility = Visibility.Visible;
+                    imgOn.Visibility = Visibility.Collapsed;
+                    li_nom.Visibility = Visibility.Visible;
+                    li_age.Visibility = Visibility.Visible;
+                    li_desc.Visibility = Visibility.Visible;
+                    tbnom.Visibility=Visibility.Visible;
+                    tbage.Visibility = Visibility.Visible;
+                    tbdesc.Visibility = Visibility.Visible;
+                    StartTracking();
+                    tbLatitude.Visibility = Visibility.Visible;
+                    tbLatitude.Visibility = Visibility.Visible;
                 }
-
-                Query(facescomp[0].PersistedFaceId.ToString());
-
-            }
-            else
-            {
-                //txtAge.Text = "no age";
-                //txtGender.Text = "no gender";
+                else
+                {
+                    stackpanelAlert.Opacity = 0.5;
+                    stackpanelAlert.Background = new SolidColorBrush(Colors.Green);
+                    txtAlert.Text = "Sujeto No Buscado";
+                    imgOn.Visibility = Visibility.Visible;
+                    imgOff.Visibility = Visibility.Collapsed;
+                    li_nom.Visibility = Visibility.Collapsed;
+                    li_age.Visibility = Visibility.Collapsed;
+                    li_desc.Visibility = Visibility.Collapsed;
+                    tbnom.Visibility = Visibility.Collapsed;
+                    tbage.Visibility = Visibility.Collapsed;
+                    tbdesc.Visibility = Visibility.Collapsed;
+                    tbLatitude.Text = "";
+                    tbLongitude.Text = "";
+                    tbLatitude.Visibility = Visibility.Collapsed;
+                    tbLatitude.Visibility = Visibility.Collapsed;
+                }
             }
             this.progressIndicator.Visibility = Visibility.Collapsed;
         }
@@ -226,9 +192,37 @@ namespace cameraFaceIdSample
         CancellationTokenSource requestStopCancellationToken;
         CameraPreviewManager cameraPreviewManager;
         FacialDrawingHandler drawingHandler;
-
-
         static readonly string OxfordApiKey = "12476023b4c349939778c49e5db321d6";
         volatile TaskCompletionSource<SoftwareBitmap> copiedVideoFrameComplete;
+        private async void StartTracking()
+        {
+            // Request permission to access location
+            var accessStatus = await Geolocator.RequestAccessAsync();
+
+            switch (accessStatus)
+            {
+                case GeolocationAccessStatus.Allowed:
+                    _geolocator = new Geolocator { ReportInterval = 2000 };
+                    // Subscribe to PositionChanged event to get updated tracking positions
+                    _geolocator.PositionChanged += OnPositionChanged;
+                    break;
+            }
+        }
+
+        async private void OnPositionChanged(Geolocator sender, PositionChangedEventArgs e)
+        {
+            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+            {
+                UpdateLocationData(e.Position);
+            });
+        }
+        private void UpdateLocationData(Geoposition position)
+        {
+            if (position != null)
+            {
+                tbLatitude.Text = "Latitude: "+position.Coordinate.Point.Position.Latitude.ToString();
+                tbLongitude.Text = "Longitude: "+position.Coordinate.Point.Position.Longitude.ToString();
+            }
+        }
     }
 }

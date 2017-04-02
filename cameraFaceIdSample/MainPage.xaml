@@ -6,7 +6,6 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
     <Grid
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <VisualStateManager.VisualStateGroups>
@@ -72,14 +71,14 @@
       Grid.ColumnSpan="3"
       Grid.RowSpan="3" />
         <Viewbox
-      Grid.Row="1"
-      Grid.Column="1">
+      Grid.Column="2" Margin="261,309,-38,102">
             <StackPanel
         Orientation="Horizontal"
         Grid.Column="1"
         Grid.Row="1">
                 <Button
           x:Name="btnPlay"
+          Visibility="Collapsed"
           Click="OnStart">
                     <SymbolIcon
             Symbol="Play" />
@@ -113,19 +112,32 @@
         Height="50"
         Foreground="White"
         IsActive="True" />
+            <!--Jorge-->
         </Grid>
         <StackPanel
       x:Name="stackpanel"
-      Grid.RowSpan="3"
-      Grid.ColumnSpan="3"
       HorizontalAlignment="Stretch"
       Background="Black"
-      VerticalAlignment="Bottom">
-           
-            <ListView Height="45" Name="li_nom"/>
-            <ListView Height="45" Name="li_age"/>
-            <ListView Height="45" Name="li_desc"/>
-            
+      Opacity="0.5"
+      VerticalAlignment="Bottom" Height="206" Grid.RowSpan="2" Margin="18,0,395,0" Grid.Row="1" Grid.ColumnSpan="2">
+            <ListView Height="40" Name="li_nom" Margin="110,0,0,0" />
+            <ListView Height="40" Name="li_age" Margin="110,0,0,0"/>
+            <ListView Height="40" x:Name="li_desc" Margin="110,0,0,0"/>
+            <TextBox Name="tbLatitude" TextWrapping="Wrap" Text="" IsEnabled="False" Opacity=".4"/>
+            <TextBox Name="tbLongitude" TextWrapping="Wrap" Text="" IsEnabled="False" Opacity=".4"/>
         </StackPanel>
+        <StackPanel
+      x:Name="stackpanelAlert"
+      HorizontalAlignment="Stretch"
+      Background="Black"
+      Opacity="0.5"
+      VerticalAlignment="Top" Height="60" Margin="15,0,0,0">
+            <TextBlock Text="" Name="txtAlert" RenderTransformOrigin="0.5,0.5" FontSize="36" Foreground="White" FontFamily="Microsoft JhengHei" FontWeight="Bold"/>
+        </StackPanel>
+        <Image Name="imgOn" Source="Resources/gifOn.gif" Visibility="Collapsed" HorizontalAlignment="Left" Height="45" Margin="5,10,0,0" VerticalAlignment="Top" Width="45" RenderTransformOrigin="0.511,0.496" Grid.Column="1"/>
+        <Image Name="imgOff" Source="Resources/gifOff.gif" Visibility="Collapsed" HorizontalAlignment="Left" Height="45" Margin="7,10,0,0" VerticalAlignment="Top" Width="45" Grid.Column="1"/>
+        <TextBox BorderThickness="0" Name="tbnom" HorizontalAlignment="Left" Margin="18,0,0,0" TextWrapping="Wrap" Text="Nombre: " VerticalAlignment="Top" Grid.Row="1" Width="109" Height="40"/>
+        <TextBox BorderThickness="0" Name="tbage" HorizontalAlignment="Left" Margin="18,40,0,0" TextWrapping="Wrap" Text="Edad: " VerticalAlignment="Top" Grid.Row="1" Width="109" Height="40"/>
+        <TextBox BorderThickness="0" Name="tbdesc" HorizontalAlignment="Left" Margin="18,80,0,0" TextWrapping="Wrap" Text="descripcion: " VerticalAlignment="Top" Grid.Row="1" Grid.RowSpan="2" Height="40" Width="109"/>
     </Grid>
 </Page>

@@ -10,19 +10,19 @@
     <PackageArchitecture>x64</PackageArchitecture>
     <PackageIdentityName>6fbb7adc-e18e-45ff-ba63-bf26fc93a223</PackageIdentityName>
     <PackageIdentityPublisher>CN=diego</PackageIdentityPublisher>
-    <IntermediateOutputPath>C:\Users\slipk\Documents\cameraFaceIdSample\cameraFaceIdSample\obj\x64\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\obj\x64\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType></RemoteDeploymentType>
     <PackageRegistrationPath></PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\slipk\Documents\cameraFaceIdSample\cameraFaceIdSample\bin\x64\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\bin\x64\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\slipk\Documents\cameraFaceIdSample\cameraFaceIdSample\bin\x64\Debug\cameraFaceIdSample.exe">
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\bin\x64\Debug\cameraFaceIdSample.exe">
       <PackagePath>entrypoint\cameraFaceIdSample.exe</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\slipk\.nuget\packages\Microsoft.Azure.Mobile.Client\3.1.0\lib\netcore45\Microsoft.WindowsAzure.Mobile.Ext.dll">
@@ -391,47 +391,192 @@
     <AppxPackagedFile Include="C:\Users\slipk\.nuget\packages\Win2D.uwp\1.20.0\lib\uap10.0\Microsoft.Graphics.Canvas.winmd">
       <PackagePath>Microsoft.Graphics.Canvas.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\slipk\Documents\cameraFaceIdSample\cameraFaceIdSample\Properties\Default.rd.xml">
-      <PackagePath>Properties\Default.rd.xml</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\slipk\Documents\cameraFaceIdSample\cameraFaceIdSample\Assets\LockScreenLogo.scale-200.png">
-      <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\slipk\Documents\cameraFaceIdSample\cameraFaceIdSample\Assets\SplashScreen.scale-200.png">
-      <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Assets\LargeTile.scale-100.png">
+      <PackagePath>Assets\LargeTile.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\slipk\Documents\cameraFaceIdSample\cameraFaceIdSample\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Assets\LargeTile.scale-125.png">
+      <PackagePath>Assets\LargeTile.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Assets\LargeTile.scale-150.png">
+      <PackagePath>Assets\LargeTile.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Assets\LargeTile.scale-200.png">
+      <PackagePath>Assets\LargeTile.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Assets\LargeTile.scale-400.png">
+      <PackagePath>Assets\LargeTile.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Assets\SmallTile.scale-100.png">
+      <PackagePath>Assets\SmallTile.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Assets\SmallTile.scale-125.png">
+      <PackagePath>Assets\SmallTile.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Assets\SmallTile.scale-150.png">
+      <PackagePath>Assets\SmallTile.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Assets\SmallTile.scale-200.png">
+      <PackagePath>Assets\SmallTile.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Assets\SmallTile.scale-400.png">
+      <PackagePath>Assets\SmallTile.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Assets\SplashScreen.scale-100.png">
+      <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Assets\SplashScreen.scale-125.png">
+      <PackagePath>Assets\SplashScreen.scale-125.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Assets\SplashScreen.scale-150.png">
+      <PackagePath>Assets\SplashScreen.scale-150.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Assets\SplashScreen.scale-400.png">
+      <PackagePath>Assets\SplashScreen.scale-400.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Assets\Square150x150Logo.scale-100.png">
+      <PackagePath>Assets\Square150x150Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Assets\Square150x150Logo.scale-125.png">
+      <PackagePath>Assets\Square150x150Logo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Assets\Square150x150Logo.scale-150.png">
+      <PackagePath>Assets\Square150x150Logo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Assets\Square150x150Logo.scale-400.png">
+      <PackagePath>Assets\Square150x150Logo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Assets\Square44x44Logo.altform-unplated_targetsize-16.png">
+      <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-16.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Assets\Square44x44Logo.altform-unplated_targetsize-256.png">
+      <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-256.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Assets\Square44x44Logo.altform-unplated_targetsize-32.png">
+      <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-32.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Assets\Square44x44Logo.altform-unplated_targetsize-48.png">
+      <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-48.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Assets\Square44x44Logo.scale-100.png">
+      <PackagePath>Assets\Square44x44Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Assets\Square44x44Logo.scale-125.png">
+      <PackagePath>Assets\Square44x44Logo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Assets\Square44x44Logo.scale-150.png">
+      <PackagePath>Assets\Square44x44Logo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Assets\Square44x44Logo.scale-400.png">
+      <PackagePath>Assets\Square44x44Logo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Assets\Square44x44Logo.targetsize-16.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-16.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Assets\Square44x44Logo.targetsize-24.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-24.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Assets\Square44x44Logo.targetsize-256.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-256.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Assets\Square44x44Logo.targetsize-32.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-32.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Assets\Square44x44Logo.targetsize-48.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-48.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Assets\Wide310x150Logo.scale-100.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Assets\Wide310x150Logo.scale-125.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Assets\Wide310x150Logo.scale-150.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Assets\Wide310x150Logo.scale-400.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Assets\LockScreenLogo.scale-200.png">
+      <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Assets\SplashScreen.scale-200.png">
+      <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\slipk\Documents\cameraFaceIdSample\cameraFaceIdSample\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\slipk\Documents\cameraFaceIdSample\cameraFaceIdSample\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\slipk\Documents\cameraFaceIdSample\cameraFaceIdSample\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\slipk\Documents\cameraFaceIdSample\cameraFaceIdSample\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\slipk\Documents\cameraFaceIdSample\cameraFaceIdSample\bin\x64\Debug\cameraFaceIdSample.xr.xml">
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Assets\SplashScreen.scale-400.jpg">
+      <PackagePath>Assets\SplashScreen.scale-400.jpg</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Properties\Default.rd.xml">
+      <PackagePath>Properties\Default.rd.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Resources\gifOff.gif">
+      <PackagePath>Resources\gifOff.gif</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Resources\gifOn.gif">
+      <PackagePath>Resources\gifOn.gif</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\bin\x64\Debug\cameraFaceIdSample.xr.xml">
       <PackagePath>cameraFaceIdSample.xr.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\slipk\Documents\cameraFaceIdSample\cameraFaceIdSample\bin\x64\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\bin\x64\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\slipk\Documents\cameraFaceIdSample\cameraFaceIdSample\bin\x64\Debug\Core\cameraFaceIdSample.exe">
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\bin\x64\Debug\Core\cameraFaceIdSample.exe">
       <PackagePath>cameraFaceIdSample.exe</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>
