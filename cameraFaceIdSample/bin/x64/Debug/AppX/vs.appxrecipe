@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\bin\x64\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-04-02T19:56:03.971</Modified>
+      <Modified>2017-04-02T20:24:15.984</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\bin\x64\Debug\cameraFaceIdSample.exe">
       <PackagePath>entrypoint\cameraFaceIdSample.exe</PackagePath>
-      <Modified>2017-04-02T19:56:02.743</Modified>
+      <Modified>2017-04-02T20:24:14.633</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\slipk\.nuget\packages\Microsoft.Azure.Mobile.Client\3.1.0\lib\netcore45\Microsoft.WindowsAzure.Mobile.Ext.dll">
       <PackagePath>Microsoft.WindowsAzure.Mobile.Ext.dll</PackagePath>
@@ -747,7 +747,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\bin\x64\Debug\cameraFaceIdSample.xr.xml">
       <PackagePath>cameraFaceIdSample.xr.xml</PackagePath>
-      <Modified>2017-04-02T19:52:54.432</Modified>
+      <Modified>2017-04-02T20:21:56.605</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -756,11 +756,11 @@
     <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\bin\x64\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-04-02T19:56:03.561</Modified>
+      <Modified>2017-04-02T20:24:15.557</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\bin\x64\Debug\Core\cameraFaceIdSample.exe">
       <PackagePath>cameraFaceIdSample.exe</PackagePath>
-      <Modified>2017-04-02T19:56:03.954</Modified>
+      <Modified>2017-04-02T20:24:15.966</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

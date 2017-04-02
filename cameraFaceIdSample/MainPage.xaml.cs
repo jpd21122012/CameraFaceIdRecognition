@@ -16,6 +16,7 @@ using System.Collections.Generic;
 using Windows.UI.Xaml.Media;
 using Windows.Devices.Geolocation;
 using Windows.UI.Core;
+using Windows.UI.Popups;
 
 namespace cameraFaceIdSample
 {
@@ -138,6 +139,9 @@ namespace cameraFaceIdSample
 
             if (faces != null)
             {
+                string lentes = faces[0].FaceAttributes.Glasses.ToString();
+                Debug.WriteLine("Resultado de lentes: " + lentes);
+
                 Debug.WriteLine("ID de rostro: " + faces[0].FaceId);
                 Guid idGuid = Guid.Parse(faces[0].FaceId.ToString());
                 SimilarPersistedFace[] facescomp = await faceService1.FindSimilarAsync(idGuid, "21122012", 1);
@@ -145,44 +149,51 @@ namespace cameraFaceIdSample
                 string pid = facescomp[0].PersistedFaceId.ToString();
                 Debug.WriteLine("PID: " + facescomp[0].PersistedFaceId);
                 Debug.WriteLine("conf: " + facescomp[0].Confidence);
-                if (conf >= .67)
+                if (lentes == "NoGlasses")
                 {
-                    Debug.WriteLine("Usuario encontrado");
-                    // busqueda en la base de datos
-                    Debug.WriteLine("Entrando a metodo bd.visualizar info de sujeto \n");
-                    stackpanelAlert.Opacity = 0.5;
-                    stackpanelAlert.Background = new SolidColorBrush(Colors.Red);
-                    txtAlert.Text = "!Alerta¡ Sujeto buscado";
-                    Query(facescomp[0].PersistedFaceId.ToString());
-                    imgOff.Visibility = Visibility.Visible;
-                    imgOn.Visibility = Visibility.Collapsed;
-                    li_nom.Visibility = Visibility.Visible;
-                    li_age.Visibility = Visibility.Visible;
-                    li_desc.Visibility = Visibility.Visible;
-                    tbnom.Visibility=Visibility.Visible;
-                    tbage.Visibility = Visibility.Visible;
-                    tbdesc.Visibility = Visibility.Visible;
-                    StartTracking();
-                    tbLatitude.Visibility = Visibility.Visible;
-                    tbLatitude.Visibility = Visibility.Visible;
+                    if (conf >= .67)
+                    {
+                        Debug.WriteLine("Usuario encontrado");
+                        // busqueda en la base de datos
+                        Debug.WriteLine("Entrando a metodo bd.visualizar info de sujeto \n");
+                        stackpanelAlert.Opacity = 0.5;
+                        stackpanelAlert.Background = new SolidColorBrush(Colors.Red);
+                        txtAlert.Text = "!Alerta¡ Sujeto buscado";
+                        Query(facescomp[0].PersistedFaceId.ToString());
+                        imgOff.Visibility = Visibility.Visible;
+                        imgOn.Visibility = Visibility.Collapsed;
+                        li_nom.Visibility = Visibility.Visible;
+                        li_age.Visibility = Visibility.Visible;
+                        li_desc.Visibility = Visibility.Visible;
+                        tbnom.Visibility = Visibility.Visible;
+                        tbage.Visibility = Visibility.Visible;
+                        tbdesc.Visibility = Visibility.Visible;
+                        StartTracking();
+                        tbLatitude.Visibility = Visibility.Visible;
+                        tbLatitude.Visibility = Visibility.Visible;
+                    }
+                    else
+                    {
+                        stackpanelAlert.Opacity = 0.5;
+                        stackpanelAlert.Background = new SolidColorBrush(Colors.Green);
+                        txtAlert.Text = "Sujeto No Buscado";
+                        imgOn.Visibility = Visibility.Visible;
+                        imgOff.Visibility = Visibility.Collapsed;
+                        li_nom.Visibility = Visibility.Collapsed;
+                        li_age.Visibility = Visibility.Collapsed;
+                        li_desc.Visibility = Visibility.Collapsed;
+                        tbnom.Visibility = Visibility.Collapsed;
+                        tbage.Visibility = Visibility.Collapsed;
+                        tbdesc.Visibility = Visibility.Collapsed;
+                        tbLatitude.Text = "";
+                        tbLongitude.Text = "";
+                        tbLatitude.Visibility = Visibility.Collapsed;
+                        tbLatitude.Visibility = Visibility.Collapsed;
+                    }
                 }
                 else
                 {
-                    stackpanelAlert.Opacity = 0.5;
-                    stackpanelAlert.Background = new SolidColorBrush(Colors.Green);
-                    txtAlert.Text = "Sujeto No Buscado";
-                    imgOn.Visibility = Visibility.Visible;
-                    imgOff.Visibility = Visibility.Collapsed;
-                    li_nom.Visibility = Visibility.Collapsed;
-                    li_age.Visibility = Visibility.Collapsed;
-                    li_desc.Visibility = Visibility.Collapsed;
-                    tbnom.Visibility = Visibility.Collapsed;
-                    tbage.Visibility = Visibility.Collapsed;
-                    tbdesc.Visibility = Visibility.Collapsed;
-                    tbLatitude.Text = "";
-                    tbLongitude.Text = "";
-                    tbLatitude.Visibility = Visibility.Collapsed;
-                    tbLatitude.Visibility = Visibility.Collapsed;
+                    MessageDialog msgDialog = new MessageDialog("No se puede continuar con el procesamiento ya que se detecto el uso de lentes \nFavor de retirarlos y hacer el proceso de nuevo");
                 }
             }
             this.progressIndicator.Visibility = Visibility.Collapsed;
