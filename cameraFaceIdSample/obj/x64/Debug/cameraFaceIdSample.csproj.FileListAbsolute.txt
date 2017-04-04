@@ -447,3 +447,4 @@ C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\obj\x
 C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\obj\x64\Debug\resources.en-us.resfiles.intermediate
 C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\obj\x64\Debug\Microsoft.WindowsAzure.Mobile.Ext.pri.xml
 C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\obj\x64\Debug\ProjectArchitectures.txt
+C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\obj\x64\Debug\Microsoft.WindowsAzure.Mobile\en-US\Microsoft.WindowsAzure.MobileServices.Resources.resw

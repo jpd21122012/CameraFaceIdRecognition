@@ -560,11 +560,26 @@
     <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Resources\caution.gif">
+      <PackagePath>Resources\caution.gif</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Resources\gifOff.gif">
       <PackagePath>Resources\gifOff.gif</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Resources\gifOn.gif">
       <PackagePath>Resources\gifOn.gif</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Resources\glasses.gif">
+      <PackagePath>Resources\glasses.gif</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Resources\internet.gif">
+      <PackagePath>Resources\internet.gif</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Resources\noFaces.gif">
+      <PackagePath>Resources\noFaces.gif</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Resources\ok.gif">
+      <PackagePath>Resources\ok.gif</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\bin\x64\Debug\cameraFaceIdSample.xr.xml">
       <PackagePath>cameraFaceIdSample.xr.xml</PackagePath>

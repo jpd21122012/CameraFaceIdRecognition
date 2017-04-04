@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\bin\x64\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-04-02T20:24:15.984</Modified>
+      <Modified>2017-04-04T05:34:35.403</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\bin\x64\Debug\cameraFaceIdSample.exe">
       <PackagePath>entrypoint\cameraFaceIdSample.exe</PackagePath>
-      <Modified>2017-04-02T20:24:14.633</Modified>
+      <Modified>2017-04-04T05:34:33.614</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\slipk\.nuget\packages\Microsoft.Azure.Mobile.Client\3.1.0\lib\netcore45\Microsoft.WindowsAzure.Mobile.Ext.dll">
       <PackagePath>Microsoft.WindowsAzure.Mobile.Ext.dll</PackagePath>
@@ -737,6 +737,10 @@
       <PackagePath>Properties\Default.rd.xml</PackagePath>
       <Modified>2017-03-27T00:19:50.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Resources\caution.gif">
+      <PackagePath>Resources\caution.gif</PackagePath>
+      <Modified>2017-04-04T02:20:19.972</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Resources\gifOff.gif">
       <PackagePath>Resources\gifOff.gif</PackagePath>
       <Modified>2017-04-01T18:41:50.512</Modified>
@@ -745,9 +749,25 @@
       <PackagePath>Resources\gifOn.gif</PackagePath>
       <Modified>2017-04-01T18:41:50.548</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Resources\glasses.gif">
+      <PackagePath>Resources\glasses.gif</PackagePath>
+      <Modified>2017-04-04T02:20:19.980</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Resources\internet.gif">
+      <PackagePath>Resources\internet.gif</PackagePath>
+      <Modified>2017-04-04T02:20:19.988</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Resources\noFaces.gif">
+      <PackagePath>Resources\noFaces.gif</PackagePath>
+      <Modified>2017-04-04T02:20:19.996</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\Resources\ok.gif">
+      <PackagePath>Resources\ok.gif</PackagePath>
+      <Modified>2017-04-04T02:20:20.004</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\bin\x64\Debug\cameraFaceIdSample.xr.xml">
       <PackagePath>cameraFaceIdSample.xr.xml</PackagePath>
-      <Modified>2017-04-02T20:21:56.605</Modified>
+      <Modified>2017-04-04T02:18:23.937</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -756,11 +776,11 @@
     <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\bin\x64\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-04-02T20:24:15.557</Modified>
+      <Modified>2017-04-04T02:22:24.332</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\bin\x64\Debug\Core\cameraFaceIdSample.exe">
       <PackagePath>cameraFaceIdSample.exe</PackagePath>
-      <Modified>2017-04-02T20:24:15.966</Modified>
+      <Modified>2017-04-04T05:34:35.377</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

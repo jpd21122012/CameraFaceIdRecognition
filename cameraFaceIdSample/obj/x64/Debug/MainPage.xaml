@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+
     <Grid
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <VisualStateManager.VisualStateGroups>
@@ -43,10 +44,10 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
         <Grid.RowDefinitions>
-            <RowDefinition
-        Height="5*" />
-            <RowDefinition
-        Height="*" />
+            <RowDefinition />
+
+
+            <RowDefinition />
             <RowDefinition
         Height="*" />
         </Grid.RowDefinitions>
@@ -57,54 +58,56 @@
         Width="*" />
             <ColumnDefinition
         Width="*" />
+            <ColumnDefinition
+        Width="*" />
+            <ColumnDefinition
+        Width="*" />
+            <ColumnDefinition
+        Width="*" />
+            <ColumnDefinition
+        Width="*" />
         </Grid.ColumnDefinitions>
         <CaptureElement x:ConnectionId='6'
       x:Name="captureElement"
-      Stretch="Fill"
-      Grid.ColumnSpan="3"
-      Grid.RowSpan="3" />
+      Stretch="Uniform"
+      Grid.ColumnSpan="7"
+      Grid.RowSpan="7" Margin="0,0,0,0.333" />
         <wtwod:CanvasControl x:ConnectionId='7'
       xmlns:wtwod="using:Microsoft.Graphics.Canvas.UI.Xaml"
       x:Name="drawCanvas"
       HorizontalAlignment="Stretch"
       VerticalAlignment="Stretch"
-      Grid.ColumnSpan="3"
-      Grid.RowSpan="3" />
+      Grid.ColumnSpan="7"
+      Grid.RowSpan="6" Margin="0,0,0,0.333" FontWeight="Bold"/>
         <Viewbox
-      Grid.Column="2" Margin="261,309,-38,102">
+      Grid.Column="6" Grid.Row="1" Height="90" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+            <Viewbox.RenderTransform>
+                <CompositeTransform Rotation="90"/>
+            </Viewbox.RenderTransform>
             <StackPanel
         Orientation="Horizontal"
         Grid.Column="1"
         Grid.Row="1">
-                <Button x:ConnectionId='22'
-          x:Name="btnPlay"
-          Visibility="Collapsed"
-                         >
-                    <SymbolIcon
-            Symbol="Play" />
-                </Button>
-                <Button x:ConnectionId='23'
-          x:Name="btnStop"
-                        
-          Visibility="Collapsed">
-                    <SymbolIcon
-            Symbol="Stop" />
-                </Button>
-                <Button x:ConnectionId='24'
+                <Button x:ConnectionId='36'
           x:Name="btnOxford"
                                        
-          Visibility="Collapsed">
+                    Width="50"
+                    Height="50"
+          Visibility="Visible" RenderTransformOrigin="0.5,0.5">
+                    <Button.RenderTransform>
+                        <CompositeTransform Rotation="-90"/>
+                    </Button.RenderTransform>
                     <SymbolIcon
-            Symbol="Camera" />
+            Symbol="Contact2" />
                 </Button>
             </StackPanel>
         </Viewbox>
         <Grid x:ConnectionId='8'
-      Background="#CC000000"
+      Background="Red"
       Grid.ColumnSpan="3"
       Grid.RowSpan="3"
       x:Name="progressIndicator"
-      Visibility="Collapsed">
+      Visibility="Collapsed" Margin="0,0,0,0.333">
             <ProgressRing
         VerticalAlignment="Center"
         HorizontalAlignment="Center"
@@ -112,33 +115,80 @@
         Height="50"
         Foreground="White"
         IsActive="True" />
-            <!--Jorge-->
         </Grid>
         <StackPanel x:ConnectionId='9'
       x:Name="stackpanel"
+            Visibility="Collapsed"
+            Grid.Column="1"
+      Grid.ColumnSpan="2"
       HorizontalAlignment="Stretch"
       Background="Black"
       Opacity="0.5"
-      VerticalAlignment="Bottom" Height="206" Grid.RowSpan="2" Margin="18,0,395,0" Grid.Row="1" Grid.ColumnSpan="2">
-            <ListView x:ConnectionId='17' Height="40" Name="li_nom" Margin="110,0,0,0" />
-            <ListView x:ConnectionId='18' Height="40" Name="li_age" Margin="110,0,0,0"/>
-            <ListView x:ConnectionId='19' Height="40" x:Name="li_desc" Margin="110,0,0,0"/>
-            <TextBox x:ConnectionId='20' Name="tbLatitude" TextWrapping="Wrap" Text="" IsEnabled="False" Opacity=".4"/>
-            <TextBox x:ConnectionId='21' Name="tbLongitude" TextWrapping="Wrap" Text="" IsEnabled="False" Opacity=".4"/>
+      VerticalAlignment="Bottom" Height="250
+            " Grid.RowSpan="3" Margin="0,0,0,15">
+            <ListView x:ConnectionId='27' Height="35" Name="li_nom" VerticalAlignment="Top"/>
+            <ListView x:ConnectionId='28' Height="35" Name="li_age" VerticalAlignment="Top"/>
+            <ListView x:ConnectionId='29' Height="35" Name="li_desc" VerticalAlignment="Top"/>
+            <TextBlock x:ConnectionId='30' Name="txtLatitude" ></TextBlock>
+            <TextBlock x:ConnectionId='31' Name="txtLongitude" ></TextBlock>
+            <TextBlock x:ConnectionId='32' Name="txtStreet" ></TextBlock>
+            <TextBlock x:ConnectionId='33' Name="txtDistrict" ></TextBlock>
+            <TextBlock x:ConnectionId='34' Name="txtTown" ></TextBlock>
+            <TextBlock x:ConnectionId='35' Name="txtCountry" ></TextBlock>
+
         </StackPanel>
+
+
         <StackPanel x:ConnectionId='10'
-      x:Name="stackpanelAlert"
+      x:Name="stackpanelNames"
+            Visibility="Collapsed"
+      Grid.ColumnSpan="1"
       HorizontalAlignment="Stretch"
       Background="Black"
       Opacity="0.5"
-      VerticalAlignment="Top" Height="60" Margin="15,0,0,0">
-            <TextBlock x:ConnectionId='16' Text="" Name="txtAlert" RenderTransformOrigin="0.5,0.5" FontSize="36" Foreground="White" FontFamily="Microsoft JhengHei" FontWeight="Bold"/>
+      VerticalAlignment="Bottom" Height="250
+            " Grid.RowSpan="3" Margin="15,0,0,15">
+            <TextBlock x:ConnectionId='18' Height="35" Name="txt1" Text="Name:" Margin="0,10,0,0" ></TextBlock>
+            <TextBlock x:ConnectionId='19' Height="35" Name="txt2" Text="Age:"  ></TextBlock>
+            <TextBlock x:ConnectionId='20'  Name="txt3" Text="Description:" ></TextBlock>
+            <TextBlock x:ConnectionId='21'  Name="txt4" Text="Latitude:" ></TextBlock>
+            <TextBlock x:ConnectionId='22'  Name="txt5" Text="Longitude:" ></TextBlock>
+            <TextBlock x:ConnectionId='23'  Name="txt6" Text="Street:" ></TextBlock>
+            <TextBlock x:ConnectionId='24'  Name="txt7" Text="District:" ></TextBlock>
+            <TextBlock x:ConnectionId='25'  Name="txt8" Text="Town:" ></TextBlock>
+            <TextBlock x:ConnectionId='26'  Name="txt9" Text="Country:" ></TextBlock>
         </StackPanel>
-        <Image x:ConnectionId='11' Name="imgOn" Source="Resources/gifOn.gif" Visibility="Collapsed" HorizontalAlignment="Left" Height="45" Margin="5,10,0,0" VerticalAlignment="Top" Width="45" RenderTransformOrigin="0.511,0.496" Grid.Column="1"/>
-        <Image x:ConnectionId='12' Name="imgOff" Source="Resources/gifOff.gif" Visibility="Collapsed" HorizontalAlignment="Left" Height="45" Margin="7,10,0,0" VerticalAlignment="Top" Width="45" Grid.Column="1"/>
-        <TextBox x:ConnectionId='13' BorderThickness="0" Name="tbnom" HorizontalAlignment="Left" Margin="18,10,0,0" TextWrapping="Wrap" Text="Nombre: " VerticalAlignment="Top" Grid.Row="1" Width="109" Height="40"/>
-        <TextBox x:ConnectionId='14' BorderThickness="0" Name="tbage" HorizontalAlignment="Left" Margin="18,52,0,0" TextWrapping="Wrap" Text="Edad: " VerticalAlignment="Top" Grid.Row="1" Width="109" Height="40"/>
-        <TextBox x:ConnectionId='15' BorderThickness="0" Name="tbdesc" HorizontalAlignment="Left" Margin="15,84,0,0" TextWrapping="Wrap" Text="Descripción: " VerticalAlignment="Top" Grid.Row="1" Height="23" Width="109" Grid.RowSpan="2"/>
+
+
+        <StackPanel x:ConnectionId='11'
+      x:Name="stackpanelAlert"
+      Grid.ColumnSpan="4"
+      HorizontalAlignment="Left"
+      Background="Black"
+      Opacity="0.5"
+      VerticalAlignment="Top" Height="60" Margin="15,0,0.333,0">
+            <Image x:ConnectionId='14' Name="imgCautiono" Source="/Resources/caution.gif" Visibility="Collapsed"
+                   Width="500" VerticalAlignment="Top"></Image>
+            <Image x:ConnectionId='15' Name="imgNoFaces" Source="/Resources/noFaces.gif" Visibility="Collapsed"
+                   Width="500" VerticalAlignment="Top"></Image>
+            <Image x:ConnectionId='16' Name="imgGlasses" Source="/Resources/glasses.gif" Visibility="Collapsed"
+                   Width="500" VerticalAlignment="Top"></Image>
+            <Image x:ConnectionId='17' Name="imgOk" Source="/Resources/ok.gif" Visibility="Collapsed"
+                   Width="500" VerticalAlignment="Top"></Image>
+        </StackPanel>
+
+        <StackPanel x:ConnectionId='12'
+      x:Name="stackpanelInternet"
+      Grid.ColumnSpan="4" Visibility="Visible"
+Grid.Column="4"
+      HorizontalAlignment="Right"
+      Background="Black"
+      Opacity="0.5"
+      VerticalAlignment="Top" Height="60" Margin="15,0,0.333,0">
+
+            <Image x:ConnectionId='13' Name="imgInternet" Source="/Resources/internet.gif" 
+                   Width="450" Visibility="Visible" VerticalAlignment="Top"></Image>
+        </StackPanel>
     </Grid>
 </Page>
 

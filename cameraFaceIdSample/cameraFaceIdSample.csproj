@@ -98,6 +98,7 @@
     </Compile>
     <Compile Include="Classes\CameraPreviewManager.cs" />
     <Compile Include="Classes\FaceDetectionFrameProcessor.cs" />
+    <Compile Include="Classes\Network.cs" />
     <Compile Include="Classes\PreviewFrameProcessedEventArgs.cs" />
     <Compile Include="Classes\PreviewFrameProcessor.cs" />
     <Compile Include="Classes\RectExtensions.cs" />
@@ -158,8 +159,13 @@
     <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="Resources\caution.gif" />
     <Content Include="Resources\gifOff.gif" />
     <Content Include="Resources\gifOn.gif" />
+    <Content Include="Resources\glasses.gif" />
+    <Content Include="Resources\internet.gif" />
+    <Content Include="Resources\noFaces.gif" />
+    <Content Include="Resources\ok.gif" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
