@@ -16,7 +16,6 @@ namespace cameraFaceIdSample.Classes
         public FaceDetectionFrameProcessor(MediaCapture capture,
           VideoEncodingProperties videoProperties) : base(capture, videoProperties)
         {
-
         }
         protected override async Task InitialiseForProcessingLoopAsync()
         {

@@ -6,7 +6,6 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
     <Grid
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <VisualStateManager.VisualStateGroups>
@@ -45,8 +44,6 @@
         </VisualStateManager.VisualStateGroups>
         <Grid.RowDefinitions>
             <RowDefinition />
-
-
             <RowDefinition />
             <RowDefinition
         Height="*" />
@@ -135,10 +132,7 @@
             <TextBlock Name="txtDistrict" ></TextBlock>
             <TextBlock Name="txtTown" ></TextBlock>
             <TextBlock Name="txtCountry" ></TextBlock>
-
         </StackPanel>
-
-
         <StackPanel
       x:Name="stackpanelNames"
             Visibility="Collapsed"
@@ -158,8 +152,6 @@
             <TextBlock  Name="txt8" Text="Town:" ></TextBlock>
             <TextBlock  Name="txt9" Text="Country:" ></TextBlock>
         </StackPanel>
-
-
         <StackPanel
       x:Name="stackpanelAlert"
       Grid.ColumnSpan="4"
@@ -176,7 +168,6 @@
             <Image Name="imgOk" Source="/Resources/ok.gif" Visibility="Collapsed"
                    Width="500" VerticalAlignment="Top"></Image>
         </StackPanel>
-
         <StackPanel
       x:Name="stackpanelInternet"
       Grid.ColumnSpan="4" Visibility="Visible"
@@ -185,7 +176,6 @@ Grid.Column="4"
       Background="Black"
       Opacity="0.5"
       VerticalAlignment="Top" Height="60" Margin="15,0,0.333,0">
-
             <Image Name="imgInternet" Source="/Resources/internet.gif" 
                    Width="450" Visibility="Visible" VerticalAlignment="Top"></Image>
         </StackPanel>

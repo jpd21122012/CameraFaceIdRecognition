@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\bin\x64\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-04-04T05:34:35.403</Modified>
+      <Modified>2017-04-04T19:37:12.105</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\bin\x64\Debug\cameraFaceIdSample.exe">
       <PackagePath>entrypoint\cameraFaceIdSample.exe</PackagePath>
-      <Modified>2017-04-04T05:34:33.614</Modified>
+      <Modified>2017-04-04T19:37:07.623</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\slipk\.nuget\packages\Microsoft.Azure.Mobile.Client\3.1.0\lib\netcore45\Microsoft.WindowsAzure.Mobile.Ext.dll">
       <PackagePath>Microsoft.WindowsAzure.Mobile.Ext.dll</PackagePath>
@@ -780,7 +780,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\bin\x64\Debug\Core\cameraFaceIdSample.exe">
       <PackagePath>cameraFaceIdSample.exe</PackagePath>
-      <Modified>2017-04-04T05:34:35.377</Modified>
+      <Modified>2017-04-04T19:37:12.076</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

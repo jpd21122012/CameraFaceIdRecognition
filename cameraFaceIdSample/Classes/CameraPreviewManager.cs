@@ -50,7 +50,6 @@ namespace cameraFaceIdSample.Classes
 
             if (selectedCamera == null)
             {
-                // we fall back to the first camera that we can find.
                 selectedCamera = videoCaptureDevices.FirstOrDefault();
             }
             return (selectedCamera);
