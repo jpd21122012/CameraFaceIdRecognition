@@ -8,14 +8,14 @@ using Microsoft.WindowsAzure.MobileServices;
 
 namespace cameraFaceIdSample
 {
-    sealed partial class App : Application
+    sealed partial class App : Application  
     {
         public App()
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
         }
-        public static MobileServiceClient MobileService = new MobileServiceClient("https://EnigmaMx.azurewebsites.net");
+        public static MobileServiceClient MobileService = new MobileServiceClient("https://EnigmaMx0.azurewebsites.net");
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
             Frame rootFrame = Window.Current.Content as Frame;

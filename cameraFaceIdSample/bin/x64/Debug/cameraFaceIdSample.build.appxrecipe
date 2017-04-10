@@ -9,7 +9,7 @@
     <SolutionConfiguration>Debug|x64</SolutionConfiguration>
     <PackageArchitecture>x64</PackageArchitecture>
     <PackageIdentityName>6fbb7adc-e18e-45ff-ba63-bf26fc93a223</PackageIdentityName>
-    <PackageIdentityPublisher>CN=diego</PackageIdentityPublisher>
+    <PackageIdentityPublisher>CN=slipk</PackageIdentityPublisher>
     <IntermediateOutputPath>C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\obj\x64\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType></RemoteDeploymentType>
     <PackageRegistrationPath></PackageRegistrationPath>

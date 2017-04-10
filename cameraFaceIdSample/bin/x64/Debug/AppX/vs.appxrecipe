@@ -9,18 +9,18 @@
     <SolutionConfiguration>Debug|x64</SolutionConfiguration>
     <PackageArchitecture>x64</PackageArchitecture>
     <PackageIdentityName>6fbb7adc-e18e-45ff-ba63-bf26fc93a223</PackageIdentityName>
-    <PackageIdentityPublisher>CN=diego</PackageIdentityPublisher>
+    <PackageIdentityPublisher>CN=slipk</PackageIdentityPublisher>
     <IntermediateOutputPath>C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\obj\x64\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType>
     </RemoteDeploymentType>
     <PackageRegistrationPath>
     </PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
-    <RegisteredManifestChecksum>F871CD30031CF588F99F5C4B5BAF923982F0777645051F71203B0B142BE929C4</RegisteredManifestChecksum>
-    <RegisteredPackageMoniker>6fbb7adc-e18e-45ff-ba63-bf26fc93a223_1.0.0.0_x64__v540nqeq9gqqg</RegisteredPackageMoniker>
-    <RegisteredUserModeAppID>6fbb7adc-e18e-45ff-ba63-bf26fc93a223_v540nqeq9gqqg!App</RegisteredUserModeAppID>
+    <RegisteredManifestChecksum>2306EAF315F36D2722F66C537B6AF5B19F682C8BA1F3A58DEC18941F9F933415</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>6fbb7adc-e18e-45ff-ba63-bf26fc93a223_1.0.0.0_x64__eaqxxrjdd6788</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>6fbb7adc-e18e-45ff-ba63-bf26fc93a223_eaqxxrjdd6788!App</RegisteredUserModeAppID>
     <RegisteredPackageID>6fbb7adc-e18e-45ff-ba63-bf26fc93a223</RegisteredPackageID>
-    <RegisteredPackagePublisher>CN=diego</RegisteredPackagePublisher>
+    <RegisteredPackagePublisher>CN=slipk</RegisteredPackagePublisher>
     <RegisteredVersion>1.0.0.0</RegisteredVersion>
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\bin\x64\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-04-04T19:37:12.105</Modified>
+      <Modified>2017-04-08T02:38:41.178</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\bin\x64\Debug\cameraFaceIdSample.exe">
       <PackagePath>entrypoint\cameraFaceIdSample.exe</PackagePath>
-      <Modified>2017-04-04T19:37:07.623</Modified>
+      <Modified>2017-04-08T02:38:40.362</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\slipk\.nuget\packages\Microsoft.Azure.Mobile.Client\3.1.0\lib\netcore45\Microsoft.WindowsAzure.Mobile.Ext.dll">
       <PackagePath>Microsoft.WindowsAzure.Mobile.Ext.dll</PackagePath>
@@ -776,11 +776,11 @@
     <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\bin\x64\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-04-04T02:22:24.332</Modified>
+      <Modified>2017-04-07T19:35:27.429</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\slipk\Documents\GitHub\CameraFaceIdRecognition\cameraFaceIdSample\bin\x64\Debug\Core\cameraFaceIdSample.exe">
       <PackagePath>cameraFaceIdSample.exe</PackagePath>
-      <Modified>2017-04-04T19:37:12.076</Modified>
+      <Modified>2017-04-08T02:38:41.155</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

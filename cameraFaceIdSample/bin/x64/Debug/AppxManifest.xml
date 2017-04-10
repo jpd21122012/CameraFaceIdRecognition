@@ -7,11 +7,11 @@
 
     For more information on package manifest files, see http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="6fbb7adc-e18e-45ff-ba63-bf26fc93a223" Publisher="CN=diego" Version="1.0.0.0" ProcessorArchitecture="x64" />
+  <Identity Name="6fbb7adc-e18e-45ff-ba63-bf26fc93a223" Publisher="CN=slipk" Version="1.0.0.0" ProcessorArchitecture="x64" />
   <mp:PhoneIdentity PhoneProductId="6fbb7adc-e18e-45ff-ba63-bf26fc93a223" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>cameraFaceIdSample</DisplayName>
-    <PublisherDisplayName>diego</PublisherDisplayName>
+    <PublisherDisplayName>Jorge</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Dependencies>
@@ -30,7 +30,11 @@
   </Applications>
   <Capabilities>
     <Capability Name="internetClient" />
+    <Capability Name="internetClientServer" />
+    <Capability Name="privateNetworkClientServer" />
     <uap:Capability Name="picturesLibrary" />
+    <uap:Capability Name="videosLibrary" />
+    <uap:Capability Name="voipCall" />
     <DeviceCapability Name="webcam" />
     <DeviceCapability Name="microphone" />
     <DeviceCapability Name="location" />

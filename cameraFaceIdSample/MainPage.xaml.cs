@@ -17,6 +17,15 @@ using Windows.UI.Xaml.Media;
 using Windows.Devices.Geolocation;
 using Windows.Services.Maps;
 using Windows.UI.Core;
+using Windows.Media.Capture;
+using Windows.Networking.Sockets;
+using System.Linq;
+using Windows.UI.Xaml.Navigation;
+using Windows.Devices.Enumeration;
+using Windows.Networking;
+using Windows.Networking.Connectivity;
+using Windows.Media.MediaProperties;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace cameraFaceIdSample
 {
@@ -30,8 +39,16 @@ namespace cameraFaceIdSample
         CameraPreviewManager cameraPreviewManager;
         FacialDrawingHandler drawingHandler;
         private Geolocator _geolocator = null;
-        static readonly string OxfordApiKey = "12476023b4c349939778c49e5db321d6";
+        //static readonly string OxfordApiKey = "12476023b4c349939778c49e5db321d6";
+        static readonly string OxfordApiKey = "2bddec152651472a8cb690e00db31a43";
         volatile TaskCompletionSource<SoftwareBitmap> copiedVideoFrameComplete;
+        private int _port = 13337;
+        private MediaCapture _mediaCap;
+        private StreamSocketListener _listener;
+        private ManualResetEvent _signal = new ManualResetEvent(false);
+        private List<Connection> _connections = new List<Connection>();
+        internal CurrentVideo CurrentVideo = new CurrentVideo();
+
 
         public MainPage()
         {
@@ -53,12 +70,58 @@ namespace cameraFaceIdSample
                 });
             };
         }
+        private async Task BeginRecording()
+        {
+            while (true)
+            {
+                try
+                {
+                    Debug.WriteLine($"Recording started");
+                    var memoryStream = new InMemoryRandomAccessStream();
+                    await _mediaCap.StartRecordToStreamAsync(MediaEncodingProfile.CreateMp4(VideoEncodingQuality.Vga), memoryStream);
+                    await Task.Delay(TimeSpan.FromSeconds(5));
+                    await _mediaCap.StopRecordAsync();
+                    Debug.WriteLine($"Recording finished, {memoryStream.Size} bytes");
+                    memoryStream.Seek(0);
+                    CurrentVideo.Id = Guid.NewGuid();
+                    CurrentVideo.Data = new byte[memoryStream.Size];
+                    await memoryStream.ReadAsync(CurrentVideo.Data.AsBuffer(), (uint)memoryStream.Size, InputStreamOptions.None);
+                    Debug.WriteLine($"Bytes written to stream");
+                    _signal.Set();
+                    _signal.Reset();
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine($"StartRecording -> {ex.Message}");
+                    break;
+                }
+            }
+        }
 
+        private async Task StartListener()
+        {
+            Debug.WriteLine($"Starting listener");
+            _listener = new StreamSocketListener();
+            _listener.ConnectionReceived += (sender, args) =>
+            {
+                Debug.WriteLine($"Connection received from {args.Socket.Information.RemoteAddress}");
+                _connections.Add(new Connection(args.Socket, this));
+            };
+            HostName host = NetworkInformation.GetHostNames().FirstOrDefault(x => x.IPInformation != null && x.Type == HostNameType.Ipv4);
+            await _listener.BindEndpointAsync(host, $"{_port}");
+            Debug.WriteLine($"Listener started on {host.DisplayName}:{_listener.Information.LocalPort}");
+        }
+        internal byte[] GetCurrentVideoDataAsync(Guid guid)
+        {
+            if (CurrentVideo.Id == Guid.Empty || CurrentVideo.Id == guid)
+                _signal.WaitOne();
+            return CurrentVideo.Id.ToByteArray().Concat(CurrentVideo.Data).ToArray();
+        }
         private async void Query(string idBuscar)
         {
             List<UsersUPT> lista = new List<UsersUPT>();
             UsersUPT u = new UsersUPT();
-
+            Debug.WriteLine("el id a buscar es: "+idBuscar);
             try
             {
                 lista = await userTableObj.Where(userTableObj => userTableObj.PID == idBuscar).ToListAsync();
@@ -169,7 +232,7 @@ namespace cameraFaceIdSample
                     var bgra16CopiedFrame = await this.copiedVideoFrameComplete.Task;
                     this.copiedVideoFrameComplete = null;
                     InMemoryRandomAccessStream destStream = new InMemoryRandomAccessStream();
-                    BitmapEncoder encoder = await BitmapEncoder.CreateAsync(BitmapEncoder.JpegEncoderId,destStream);
+                    BitmapEncoder encoder = await BitmapEncoder.CreateAsync(BitmapEncoder.JpegEncoderId, destStream);
                     encoder.SetSoftwareBitmap(bgra16CopiedFrame);
                     await encoder.FlushAsync();
                     FaceServiceClient faceService = new FaceServiceClient(OxfordApiKey);
@@ -184,7 +247,7 @@ namespace cameraFaceIdSample
                         int roundedAge = (int)Math.Round(edad);
                         Debug.WriteLine("ID de rostro: " + faces[0].FaceId);
                         Guid idGuid = Guid.Parse(faces[0].FaceId.ToString());
-                        SimilarPersistedFace[] facescomp = await faceService1.FindSimilarAsync(idGuid, "21122012", 1);
+                        SimilarPersistedFace[] facescomp = await faceService1.FindSimilarAsync(idGuid, "21122011", 1);
                         double conf = Double.Parse(facescomp[0].Confidence.ToString());
                         string pid = facescomp[0].PersistedFaceId.ToString();
                         Debug.WriteLine("PID: " + facescomp[0].PersistedFaceId);
@@ -208,6 +271,9 @@ namespace cameraFaceIdSample
                                 Debug.WriteLine("Entrando a metodo bd.visualizar info de sujeto \n");
                                 Query(facescomp[0].PersistedFaceId.ToString());
                                 await StartTracking();
+                                //Video Stream
+                                //await StartListener();
+                                //await BeginRecording();
                             }
                             else
                             {
@@ -217,24 +283,20 @@ namespace cameraFaceIdSample
                                 stackpanelAlert.Background = new SolidColorBrush(Colors.Green);
                                 imgCautiono.Visibility = Visibility.Collapsed;
                                 imgOk.Visibility = Visibility.Visible;
-
                                 imgGlasses.Visibility = Visibility.Collapsed;
                                 Debug.WriteLine("Usuario no identificado");
                                 stackpanel.Visibility = Visibility.Collapsed;
                                 imgNoFaces.Visibility = Visibility.Collapsed;
-                                Query(null);
                             }
                         }
                         else
                         {
                             stackpanelNames.Visibility = Visibility.Collapsed;
                             stackpanelAlert.Width = 500;
-                            Query(null);
                             stackpanelAlert.Visibility = Visibility.Visible;
                             imgCautiono.Visibility = Visibility.Collapsed;
                             imgOk.Visibility = Visibility.Collapsed;
                             imgGlasses.Visibility = Visibility.Visible;
-
                             stackpanelAlert.Background = new SolidColorBrush(Colors.Blue);
                             stackpanel.Visibility = Visibility.Collapsed;
                             imgNoFaces.Visibility = Visibility.Collapsed;
@@ -276,7 +338,6 @@ namespace cameraFaceIdSample
                     break;
             }
         }
-
         async private void OnPositionChanged(Geolocator sender, PositionChangedEventArgs e)
         {
             await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
